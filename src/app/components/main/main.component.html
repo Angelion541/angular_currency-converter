@@ -1,0 +1,39 @@
+<div class="py-4 px-6 rounded flex justify-center items-center flex-row mr-2">
+  <div class="flex flex-col border p-2 mr-2">
+    <select
+      class="border py-1 px-4 w-[300px] mb-2"
+      aria-label="Floating label select example"
+      (change)="selectingBaseCurrency($event)"
+      >
+      <option>Оберіть валюту</option>
+      <option *ngFor="let el of currencies">{{el.txt}}</option>
+    </select>
+
+    <input
+      type="number"
+      value={{baseValue}}
+      (input)="enteringBaseValue($event)"
+      class="border py-1 px-4 w-[300px]"
+      min="1"
+    >
+  </div>
+
+  <div class="flex flex-col border p-2 mr-2">
+    <select
+      class="border py-1 px-4 w-[300px] mb-2"
+      aria-label="Floating label select example"
+      (change)="selectingQuotedCurrency($event)"
+      >
+      <option>Оберіть валюту</option>
+      <option *ngFor="let el of currencies">{{el.txt}}</option>
+    </select>
+
+    <input
+      type="number"
+      class="border py-1 px-4 w-[300px]"
+      min="1"
+      value={{quotedValue}}
+      (input)="enteringQuotedValue($event)"
+    >
+  </div>
+</div>
