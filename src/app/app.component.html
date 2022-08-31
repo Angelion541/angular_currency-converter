@@ -1,4 +1,8 @@
+<app-global-error></app-global-error>
 
+<p *ngIf="loading" class="text-center text-lg mt-16">Loading...</p>
 
-
-
+<div *ngIf="currencies$ | async as currencies">
+  <app-header [currencies]="currencies"></app-header>
+  <app-main [currencies]="addUAH(currencies)"></app-main>
+</div>
